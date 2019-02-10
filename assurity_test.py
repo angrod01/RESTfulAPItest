@@ -12,8 +12,7 @@ class TestAssurity(unittest.TestCase):
         raise Exception('GET {}'.format(resp.status_code))
 
     def test_name(self):
-        #TODO
-        print('dummy test')
+        self.assertEqual(self.resp.json().get('Name'), 'Carbon credits', '"Name" should be "Carbon credits"')
 
     def test_relist(self):
         #TODO
@@ -25,5 +24,5 @@ class TestAssurity(unittest.TestCase):
 
 if __name__ == '__main__':
 
-    print('Hello Assurity!')
+    print('Running Assurity RESTful API test:')
     unittest.main()
