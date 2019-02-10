@@ -15,8 +15,7 @@ class TestAssurity(unittest.TestCase):
         self.assertEqual(self.resp.json().get('Name'), 'Carbon credits', '"Name" should be "Carbon credits"')
 
     def test_relist(self):
-        #TODO
-        print('dummy test')
+        self.assertTrue(self.resp.json().get('CanRelist'), '"CanRelist" should be "true"')
 
     def test_promotions_2x(self):
         #TODO
