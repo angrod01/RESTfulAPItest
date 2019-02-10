@@ -18,8 +18,11 @@ class TestAssurity(unittest.TestCase):
         self.assertTrue(self.resp.json().get('CanRelist'), '"CanRelist" should be "true"')
 
     def test_promotions_2x(self):
-        #TODO
-        print('dummy test')
+        promotions = self.resp.json().get('Promotions')
+        for item in promotions:
+            if (item.get('Name') == 'Gallery'):
+                self.assertTrue('2x larger image' in item.get('Description'), 
+                '"Description" should contain "2x larger image" \nDescription:\n' + item.get('Description'))
 
 if __name__ == '__main__':
 
