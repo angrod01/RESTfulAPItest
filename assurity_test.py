@@ -1,7 +1,15 @@
 import unittest
+import requests
+import json
 
+BASE_URL = 'https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false'
 
 class TestAssurity(unittest.TestCase):
+
+    resp = requests.get(BASE_URL)
+
+    if resp.status_code != 200:
+        raise Exception('GET {}'.format(resp.status_code))
 
     def test_name(self):
         #TODO
